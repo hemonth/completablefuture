@@ -21,4 +21,9 @@ public class QuoteService {
         return quote.getValue().getQuote();
     }
 
+    public Quote getNewQuote(){
+        Quote quote = restTemplate.getForObject("http://gturnquist-quoters.cfapps.io/api/random", Quote.class);
+        return quote;
+    }
+
 }
